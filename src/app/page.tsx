@@ -8,7 +8,7 @@ interface SaudacaoProps {
   }
   
 function Titulo(props) {
-  return <h1>React - conceitos básicos</h1>;
+  return <h1 className='titulo'>React - conceitos básicos</h1>;
 }
 
 const Saudacao: React.FC<SaudacaoProps> = ({nome}) => {
