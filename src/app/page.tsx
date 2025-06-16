@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 
 
 
@@ -24,13 +24,20 @@ class SaudacaoComClass extends React.Component<SaudacaoProps> {
 }
 
 const Home = () => {
-  const [contagem, setContagem] = useState(0);
+  const [dados, setDados] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/dados')
+      .then(response => response.json())
+      .then(data => setDados(data));
+  }, []);
 
   return (
-    <div>
-      <p>Você clicou {contagem} vezes</p>
-      <button onClick={() => setContagem(contagem + 1)}>Clique aqui</button>
-    </div>
+    <ul>
+      {dados.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
   );
 }
 
