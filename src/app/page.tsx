@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div>
       <main>
-        <h1>React - conceitos básicos</h1>
+        const Elemento = <h1>Olá, mundo!</h1>;
       </main>
     </div>
   );
