@@ -23,16 +23,13 @@ class SaudacaoComClass extends React.Component<SaudacaoProps> {
 }
 
 const Home = () => {
-	return (
-		<div>
-			<main>
-				<Titulo />
-        <Saudacao nome="Minora" />
-        <Saudacao nome="Alunos" />
-        <SaudacaoComClass nome="professor e alunos" />
-			</main>
-		</div>
-	);
+  const estaLogado = true;
+
+  return (
+    <div>
+      {estaLogado ? <h1>Bem-vindo de volta!</h1> : <h1>Por favor, faça login.</h1>}
+    </div>
+  );
 }
 
 export default Home;
