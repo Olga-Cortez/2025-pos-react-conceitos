@@ -23,12 +23,14 @@ class SaudacaoComClass extends React.Component<SaudacaoProps> {
 }
 
 const Home = () => {
-  const estaLogado = true;
+  const itens = ["Item 1", "Item 2", "Item 3"];
 
   return (
-    <div>
-      {estaLogado ? <h1>Bem-vindo de volta!</h1> : <h1>Por favor, faça login.</h1>}
-    </div>
+    <ul>
+      {itens.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
   );
 }
 
