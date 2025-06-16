@@ -1,6 +1,7 @@
 "use client";
 
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
+
 
 
 interface SaudacaoProps {
@@ -23,14 +24,13 @@ class SaudacaoComClass extends React.Component<SaudacaoProps> {
 }
 
 const Home = () => {
-  const itens = ["Item 1", "Item 2", "Item 3"];
+  const [contagem, setContagem] = useState(0);
 
   return (
-    <ul>
-      {itens.map((item, index) => (
-        <li key={index}>{item}</li>
-      ))}
-    </ul>
+    <div>
+      <p>Você clicou {contagem} vezes</p>
+      <button onClick={() => setContagem(contagem + 1)}>Clique aqui</button>
+    </div>
   );
 }
 
